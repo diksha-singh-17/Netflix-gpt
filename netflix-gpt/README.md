@@ -8,6 +8,7 @@
 - Login/Signup Page
 - User can login using their email and password or sign up with a new account.
 - Redirect to Browse
+- Form Validation
 
 - Browse(after authentication)
 
