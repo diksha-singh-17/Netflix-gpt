@@ -10,7 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BACKGROUND_URL, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -28,7 +28,7 @@ const Login = () => {
       // name.current.value
     );
     setErrorMessage(message);
-    console.log(message);
+
     if (message) return;
     if (!isSignInForm) {
       // signUp
@@ -39,7 +39,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+
           updateProfile(user, {
             displayName: name.current.value,
             photoURL: USER_AVATAR,
@@ -58,7 +58,7 @@ const Login = () => {
             })
             .catch((error) => {
               // An error occurred
-              console.log(error.message);
+              console.error(error.message);
             });
         })
         .catch((error) => {
@@ -94,10 +94,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute ">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/4d7bb476-6d8b-4c49-a8c3-7739fddd135c/deecf71d-7a47-4739-9e1a-31b6b0d55be7/IN-en-20240429-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="background"
-        />
+        <img src={BACKGROUND_URL} alt="background" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}

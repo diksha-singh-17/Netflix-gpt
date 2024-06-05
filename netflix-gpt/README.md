@@ -20,6 +20,16 @@
 - BugFix- if user is not logged in redirect to login page and if logged in redirect to browse page
 - Unsubscribe to onAuthStateChange callback
 - Add Hardcoded values to constants file
+- Register TMDB API and generated access token
+- Get data from TMDB Movie API
+- Added Custom Hooks
+- Create MovieSlice
+- Update store with MovieData
+- Planning for ain container and secondary container
+- Fetch Data for Trailer video
+- Updated store with trailer video
+- Embedded youtube trailer video and made it autoplay, mute
+-
 
 # Features
 
