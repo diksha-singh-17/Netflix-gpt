@@ -25,10 +25,15 @@
 - Added Custom Hooks
 - Create MovieSlice
 - Update store with MovieData
-- Planning for ain container and secondary container
+- Planning for main container and secondary container
 - Fetch Data for Trailer video
 - Updated store with trailer video
 - Embedded youtube trailer video and made it autoplay, mute
+- Made beautiful main container using Tailwind
+- Build seconday container
+- Build Movie Lists
+- Build MovieCard
+- Found out TMDB Image CDN
 -
 
 # Features
