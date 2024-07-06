@@ -34,7 +34,10 @@
 - Build Movie Lists
 - Build MovieCard
 - Found out TMDB Image CDN
--
+- usePopularMovies Custom hook
+- GPT Search Bar
+- GPT Serach Page
+- (BONUS) Multi-language feature in our App
 
 # Features
 
