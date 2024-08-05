@@ -10,16 +10,34 @@ const GptSearchBar = () => {
   const handleGptSearchClick = async () => {
     console.log(searchText.current.value);
 
-    const gptResults = await openai.chat.completions.create({
-      messages: [{ role: "user", content: "Say this is a test" }],
-      model: "gpt-3.5-turbo",
-    });
-    console.log(gptResults.choices);
+    try {
+      // Your API call logic here
+      const gptQuery =
+        "Act as a movie recommendation sysytem and suggest some movies for the query:" +
+        searchText.current.value +
+        "only give me name of 5 movies, comma separated like the example given ahaed Example: Don, Kuch Kuch Hota Hae,Sholay,Fashion,Koi Mil Gaya";
+      const gptResults = await openai.chat.completions.create({
+        messages: [{ role: "user", content: gptQuery }],
+        model: "gpt-3.5-turbo",
+      });
+      console.log(gptResults.choices);
+    } catch (error) {
+      if (error.response && error.response.status === 429) {
+        console.error(
+          "Quota exceeded. Please check your plan and billing details."
+        );
+      } else {
+        console.error("An error occurred:", error.message);
+      }
+    }
   };
 
   return (
     <div className="pt-[20%] flex justify-center">
-      <form className="w-1/2 bg-black grid-cols-12">
+      <form
+        className="w-1/2 bg-black grid-cols-12"
+        onSubmit={(e) => e.preventDefault()}
+      >
         <input
           type="text"
           className="p-4 m-2 col-span-9"
